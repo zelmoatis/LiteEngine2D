@@ -10,7 +10,6 @@ protected:
     Image *_image;
     Vector2 _position;//directly related to h_pos and v_pos, maybe useless
     Vector2 _destination;//directly related to grid
-    int _lastStepMS;
 
 public:
     NonRotatableTetronimo();

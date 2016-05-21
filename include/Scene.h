@@ -4,12 +4,12 @@
 #include <vector>
 
 #include "SceneObject.h"
+#include "Tetronimo.h"
 
 class Scene
 {
 private:
-	std::vector<SceneObject*> _objects;
-
+    Tetronimo * _currentPiece;
 public:
 	Scene ();
 	~Scene ();

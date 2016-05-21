@@ -3,19 +3,17 @@
 #include "TestDot.h"
 #include "BallObject.h"
 #include "ExplosionPiece.h"
+#include "WormPiece.h"
+#include <time.h>
 
 Scene::Scene ()
 {
-	// Hardcoded construction of a new BallObject in the scene constructor
-	// TODO: This need to be deleted (even as an example)
+    srand(time(NULL));
 
-	_objects.push_back (BackgroundGrid::Instance());
-	_objects.push_back( new ExplosionPiece );
-	// _objects.push_back (new BallObject ());
-	// _objects.push_back (new BallObject ());
-	// _objects.push_back (new BallObject ());
-	// _objects.push_back (new BallObject ());
-	// _objects.push_back (new BallObject ());
+	if( rand()%2 == 0 )
+        _currentPiece = new WormPiece;
+    else
+        _currentPiece = new ExplosionPiece;
 }
 
 Scene::~Scene ()
@@ -25,21 +23,31 @@ Scene::~Scene ()
 
 void Scene::Update ()
 {
-	for (auto it : _objects) {
-		it->Update ();
-	}
+	BackgroundGrid::Instance()->Update();
+
+	_currentPiece->Update();
+
+    if( _currentPiece->Sits() )
+    {
+        delete _currentPiece;
+        if( rand()%2 == 0 )
+            _currentPiece = new WormPiece;
+        else
+            _currentPiece = new ExplosionPiece;
+    }
 }
 
 void Scene::Display ()
 {
-	for (auto it : _objects) {
-		it->Draw ();
-	}
+	BackgroundGrid::Instance()->Draw();
+
+	_currentPiece->Draw();
+
 }
 
 void Scene::Clear ()
 {
-	for (auto it : _objects) {
-		delete it;
-	}
+
+	delete _currentPiece;
+
 }

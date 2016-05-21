@@ -39,6 +39,7 @@ if(top<3)
     Vector2 SideMovement = Vector2::Zero;
     Vector2 DownMovement = Vector2::Zero;
     int hMovement = 0, vMovement = 0;
+
 if(GetV()+GetHeight()-1<top)
 {
     if(Input::GetKeyDown('a'))
@@ -59,7 +60,7 @@ if(GetV()+GetHeight()-1<top)
 
     if(Input::GetKeyDown('s'))
     {
-        {
+
             unsigned int minimum = BackgroundGrid::Instance()->MinHeight(this) -1;
             _vPos += minimum;
             _position += Vector2( 0, -(int)( minimum*22 ) );
@@ -67,19 +68,18 @@ if(GetV()+GetHeight()-1<top)
             BackgroundGrid::Instance()->SetPiece(this);
             //BackgroundGrid::Instance()->show_grid();
             //BackgroundGrid::Instance()->show_piletop();
-
+            _sits = true;
             BackgroundGrid::Instance()->Settle();
-
-
+            /*
             //this is where this piece disappears and another one is spawned
             //instead, we move this one to initial position and reset _lastStepMS
             _lastStepMS = GameTime::GetTimeMS();
             _vPos = INIT_POS_V;
             _hPos = INIT_POS_H;
             _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( 4+_hPos * 23, -(int)(4+_vPos * 22));
-
+            */
             return;
-        }
+
     }
 }
 else
@@ -110,17 +110,16 @@ else
             BackgroundGrid::Instance()->SetPiece(this);
             //BackgroundGrid::Instance()->show_grid();
             //BackgroundGrid::Instance()->show_piletop();
-
+            _sits = true;
             BackgroundGrid::Instance()->Settle();
-
-
+            /*
             //this is where this piece disappears and another one is spawned
             //instead, we move this one to initial position and reset _lastStepMS
             _lastStepMS = GameTime::GetTimeMS();
             _vPos = INIT_POS_V;
             _hPos = INIT_POS_H;
             _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( 4+_hPos * 23, -(int)(4+_vPos * 22));
-
+            */
             return;
         }
     }
@@ -141,13 +140,16 @@ if( GameTime::GetTimeMS() - _lastStepMS > TURN )
             BackgroundGrid::Instance()->SetPiece(this);
             //BackgroundGrid::Instance()->show_grid();
             //BackgroundGrid::Instance()->show_piletop();
+            _sits = true;
             BackgroundGrid::Instance()->Settle();
+            /*
             //this is where this piece disappears and another one is spawned
             //instead, we move this one to initial position and reset _lastStepMS
             _lastStepMS = GameTime::GetTimeMS();
             _vPos = INIT_POS_V;
             _hPos = INIT_POS_H;
             _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( 4+_hPos * 23, -(int)(4+_vPos * 22));
+            */
             return;
         }
 
@@ -165,13 +167,16 @@ if( GameTime::GetTimeMS() - _lastStepMS > TURN )
             BackgroundGrid::Instance()->SetPiece(this);
             //BackgroundGrid::Instance()->show_grid();
             //BackgroundGrid::Instance()->show_piletop();
+            _sits = true;
             BackgroundGrid::Instance()->Settle();
+            /*
             //this is where this piece disappears and another one is spawned
             //instead, we move this one to initial position and reset _lastStepMS
             _lastStepMS = GameTime::GetTimeMS();
             _vPos = INIT_POS_V;
             _hPos = INIT_POS_H;
             _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( 4+_hPos * 23, -(int)(4+_vPos * 22));
+            */
             return;
         }
 
