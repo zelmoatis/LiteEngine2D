@@ -17,10 +17,10 @@ _shape[0] = { 1, 0, 1 };
 _shape[1] = { 0, 0, 0 };
 _shape[2] = { 1, 0, 1 };
 
-_leftSide = { 0, 2 };
-_rightSide = { 0, 2 };
-_downSide = { 0, 2 };
-_topSide = { 0, 2 };
+_leftSide = { std::make_pair(0,0), std::make_pair(2,0) };
+_rightSide = { std::make_pair(0,2), std::make_pair(2,2) };
+_downSide = { std::make_pair(2,0), std::make_pair(2,2) };
+_topSide = { std::make_pair(0,0), std::make_pair(0,2) };
 _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( 4+_hPos * 23, -(int)(4+_vPos * 22));
 
 _lastStepMS = GameTime::GetTimeMS();
@@ -28,4 +28,12 @@ _lastStepMS = GameTime::GetTimeMS();
 
 ExplosionPiece::~ExplosionPiece(){
 delete _image;
+}
+
+unsigned int ExplosionPiece::GetHeight(){
+return 3;
+}
+
+unsigned int ExplosionPiece::GetWidth(){
+return 3;
 }
