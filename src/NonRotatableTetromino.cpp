@@ -44,7 +44,7 @@ int hMovement = 0, vMovement = 0;
 if(Input::GetKeyDown('a'))
 {
     if(BackgroundGrid::Instance()->RoomLeft(this))
-        {SideMovement = Vector2( -23, 0 );
+        {SideMovement = Vector2( -31, 0 );
         hMovement = -1;
         }
 }
@@ -52,7 +52,7 @@ if(Input::GetKeyDown('a'))
 if(Input::GetKeyDown('d'))
 {
     if(BackgroundGrid::Instance()->RoomRight(this))
-        {SideMovement = Vector2( 23, 0);
+        {SideMovement = Vector2( 31, 0);
         hMovement = 1;
         }
 }
@@ -61,7 +61,7 @@ if(Input::GetKeyDown('s'))
 {
     unsigned int minimum = BackgroundGrid::Instance()->MinHeight(this) -1;
     _vPos += minimum;
-    _position += Vector2( 0, -(int)( minimum*22 ) );
+    _position += Vector2( 0, -(int)( minimum*31 ) );
     _lastStepMS += TURN;
     BackgroundGrid::Instance()->SetPiece(this);
     //BackgroundGrid::Instance()->show_grid();
@@ -76,7 +76,7 @@ if( GameTime::GetTimeMS() - _lastStepMS > TURN )
     if( BackgroundGrid::Instance()->RoomDown(this) )
     {
         _lastStepMS += TURN;
-        DownMovement += Vector2( 0, -22 );
+        DownMovement += Vector2( 0, -31 );
         vMovement = 1;
     }
     else
