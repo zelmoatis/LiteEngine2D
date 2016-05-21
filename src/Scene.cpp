@@ -1,6 +1,5 @@
 #include "Scene.h"
 #include "BackgroundGrid.h"
-#include "TestDot.h"
 #include "BallObject.h"
 #include "ExplosionPiece.h"
 #include "WormPiece.h"

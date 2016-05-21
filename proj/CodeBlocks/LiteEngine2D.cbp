@@ -90,6 +90,7 @@
 		<Unit filename="../../src/Tetronimo.cpp" />
 		<Unit filename="../../src/Vector2.cpp" />
 		<Unit filename="../../src/Window.cpp" />
+		<Unit filename="../../src/WormPiece.cpp" />
 		<Unit filename="../../src/main.cpp" />
 		<Extensions>
 			<code_completion />

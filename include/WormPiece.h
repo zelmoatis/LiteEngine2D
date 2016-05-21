@@ -1,17 +1,15 @@
 #ifndef WORM_PIECE_H
 #define WORM_PIECE_H
 
-#include "RotatableTetronimo.h"
+#include "RotatableTetromino.h"
 
-class WormPiece: public RotatableTetronimo{
+class WormPiece: public RotatableTetromino{
 
 public:
     WormPiece();
     ~WormPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
-    void RotateLeft();
-    void RotateRight();
 };
 
 #endif // WORM_PIECE_H

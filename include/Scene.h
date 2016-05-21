@@ -4,12 +4,12 @@
 #include <vector>
 
 #include "SceneObject.h"
-#include "Tetronimo.h"
+#include "Tetromino.h"
 
 class Scene
 {
 private:
-    Tetronimo * _currentPiece;
+    Tetromino * _currentPiece;
 public:
 	Scene ();
 	~Scene ();

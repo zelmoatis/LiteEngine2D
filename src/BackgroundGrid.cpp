@@ -1,5 +1,4 @@
 #include "BackgroundGrid.h"
-#include "TestDot.h"
 
 #include "Resources.h"
 
@@ -65,28 +64,24 @@ std::cout<<"\n";
 
 }
 
-unsigned int BackgroundGrid::MinHeight(Tetronimo * tet){
+unsigned int BackgroundGrid::MinHeight(Tetromino * tet){
 
-unsigned int v,h;
+/*unsigned int v,h;
 std::vector< std::pair< int, int > > LowestPointsH;
 
 v = tet->GetV();
 h = tet->GetH();
 LowestPointsH = tet->GetDownSide();
-
+*/
 unsigned int minHeight = 1;
+
 
 bool flag = true;
 while( flag )
-{for( unsigned int k = 0; k < LowestPointsH.size(); k ++ )
-    {
-        if(_grid[ v + LowestPointsH[k].first + minHeight ][ 1 + h + LowestPointsH[k].second ] != 0)
-            {flag = false;
-            break;
-            }
-    }
-if( flag == true )
-    minHeight++;
+{
+if( OverLap( tet->GetShape(), tet->GetV() + minHeight, tet->GetH() ) )
+    break;
+minHeight++;
 }
 return minHeight;
 
@@ -173,9 +168,9 @@ Vector2 BackgroundGrid::GetPosition(){
 return _position;
 }
 
-bool BackgroundGrid::RoomLeft(Tetronimo * tet){
+bool BackgroundGrid::RoomLeft(Tetromino * tet){
 
-unsigned int v,h;
+/*unsigned int v,h;
 std::vector< std::pair< int, int > > leftmostPointsV = tet -> GetLeftSide();
 v = tet->GetV();
 h = tet->GetH();
@@ -184,12 +179,14 @@ for( unsigned int k = 0; k < leftmostPointsV.size(); k ++ )
     {if( _grid[ v + leftmostPointsV[k].first ][ 1 + h + leftmostPointsV[k].second - 1 ] != 0 )
         return false;
     }
+return true;*/
+if(OverLap(tet->GetShape(), tet->GetV(), tet->GetH()-1))
+    return false;
 return true;
-
 }
 
-bool BackgroundGrid::RoomRight(Tetronimo * tet){
-
+bool BackgroundGrid::RoomRight(Tetromino * tet){
+/*
 unsigned int v,h;
 std::vector< std::pair< int, int > > rightmostPointsV = tet -> GetRightSide();
 v = tet->GetV();
@@ -200,11 +197,14 @@ for( unsigned int k = 0; k < rightmostPointsV.size(); k ++ )
         return false;
     }
 return true;
-
+*/
+if(OverLap(tet->GetShape(), tet->GetV(), tet->GetH()+1))
+    return false;
+return true;
 }
 
-bool BackgroundGrid::RoomDown( Tetronimo * tet ){
-
+bool BackgroundGrid::RoomDown( Tetromino * tet ){
+/*
 unsigned int v,h;
 std::vector< std::pair< int, int > > lowestPointsH;
 
@@ -219,10 +219,13 @@ for( unsigned int k = 0; k < lowestPointsH.size(); k ++ )
     }
 
 return true;
-
+*/
+if(OverLap(tet->GetShape(), tet->GetV()+1, tet->GetH()))
+    return false;
+return true;
 }
 
-void BackgroundGrid::SetPiece(Tetronimo * tet){
+void BackgroundGrid::SetPiece(Tetromino * tet){
 unsigned int v,h;
 std::vector< std::vector <int> > tempShape;
 
@@ -256,56 +259,6 @@ for( unsigned int i = 0; i < tempShape.size(); i ++ )
     }
 
 return false;
-
-}
-
-
-bool BackgroundGrid::RoomLeftInside(Tetronimo * tet){
-
-unsigned int v,h;
-std::vector< std::pair< int, int > > leftmostPointsV = tet -> GetRightSide();
-v = tet->GetV();
-h = tet->GetH();
-
-for( unsigned int k = 0; k < leftmostPointsV.size(); k ++ )
-    {if( _grid[ v + leftmostPointsV[k].first ][ 1 + h + leftmostPointsV[k].second - 1 ] != 0 )
-        return false;
-    }
-return true;
-
-}
-
-bool BackgroundGrid::RoomRightInside(Tetronimo * tet){
-
-unsigned int v,h;
-std::vector< std::pair< int, int > > rightmostPointsV = tet -> GetLeftSide();
-v = tet->GetV();
-h = tet->GetH();
-
-for( unsigned int k = 0; k < rightmostPointsV.size(); k ++ )
-    {if( _grid[ v + rightmostPointsV[k].first ][ 1 + h + rightmostPointsV[k].second + 1 ] != 0 )
-        return false;
-    }
-return true;
-
-}
-
-bool BackgroundGrid::RoomDownInside( Tetronimo * tet ){
-
-unsigned int v,h;
-std::vector< std::pair< int, int > > lowestPointsH;
-
-v = tet->GetV();
-h = tet->GetH();
-lowestPointsH = tet->GetTopSide();
-
-for( unsigned int k = 0; k < lowestPointsH.size(); k ++ )
-    {
-        if(_grid[ v + lowestPointsH[k].first + 1 ][ 1 + h + lowestPointsH[k].second ] != 0)
-            return false;
-    }
-
-return true;
 
 }
 

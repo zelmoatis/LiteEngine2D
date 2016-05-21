@@ -2,7 +2,7 @@
 #define BACKGROUND_GRID_H
 
 #include "SceneObject.h"
-#include "Tetronimo.h"
+#include "Tetromino.h"
 #include <vector>
 #include "Image.h"
 #include "Vector2.h"
@@ -27,16 +27,13 @@ public:
     void Draw ();
     void Update();
     Vector2 GetPosition();
-    bool RoomLeft(Tetronimo * tet);
-    bool RoomRight(Tetronimo * tet);
-    bool RoomDown(Tetronimo * tet);
-    bool RoomLeftInside(Tetronimo * tet);
-    bool RoomRightInside(Tetronimo * tet);
-    bool RoomDownInside(Tetronimo * tet);
+    bool RoomLeft(Tetromino * tet);
+    bool RoomRight(Tetromino * tet);
+    bool RoomDown(Tetromino * tet);
     bool OverLap( std::vector< std::vector <int> >, unsigned int h, unsigned int v );
-    void SetPiece(Tetronimo * tet);
+    void SetPiece(Tetromino * tet);
     void Settle();
-    unsigned int MinHeight(Tetronimo * tet);
+    unsigned int MinHeight(Tetromino * tet);
 };
 
 #endif // BACKGROUND_GRID_OBJ_H

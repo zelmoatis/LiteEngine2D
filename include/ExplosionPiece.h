@@ -1,9 +1,9 @@
 #ifndef EXPLOSION_PIECE_H
 #define EXPLOSION_PIECE_H
 
-#include "NonRotatableTetronimo.h"
+#include "NonRotatableTetromino.h"
 
-class ExplosionPiece: public NonRotatableTetronimo{
+class ExplosionPiece: public NonRotatableTetromino{
 
 public:
     ExplosionPiece();
