@@ -5,7 +5,8 @@
 
 Tetronimo::Tetronimo():
     _hPos(INIT_POS_H),
-    _vPos(INIT_POS_V)
+    _vPos(INIT_POS_V),
+    _sits(false)
     {
 
 }
@@ -34,26 +35,29 @@ std::vector< std::vector <int> > Tetronimo::GetShape(){
 return _shape;
 }
 
-std::vector<int> Tetronimo::GetLeftSide(){
+std::vector< std::pair< int, int > > Tetronimo::GetLeftSide(){
 return _leftSide;
 }
 
-std::vector<int> Tetronimo::GetRightSide(){
+std::vector< std::pair< int, int > > Tetronimo::GetRightSide(){
 return _rightSide;
 }
 
-std::vector<int> Tetronimo::GetDownSide(){
+std::vector< std::pair< int, int > > Tetronimo::GetDownSide(){
 return _downSide;
 }
 
-std::vector<int> Tetronimo::GetTopSide(){
+std::vector< std::pair< int, int > > Tetronimo::GetTopSide(){
 return _topSide;
 }
 
 unsigned int Tetronimo::GetHeight(){
-return _shape.size();
 }
 
 unsigned int Tetronimo::GetWidth(){
-return _shape[0].size();
+
+}
+
+bool Tetronimo::Sits(){
+return _sits;
 }
