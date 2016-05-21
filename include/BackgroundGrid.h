@@ -20,7 +20,6 @@ private:
     bool FullLine( unsigned int v );
     bool EmptyLine( unsigned int v );
     Image * _colors[7];
-    //Tetronimo *_current;
 public:
     unsigned int GetPileTop();
     static BackgroundGrid * Instance();
@@ -34,7 +33,7 @@ public:
     bool RoomLeftInside(Tetronimo * tet);
     bool RoomRightInside(Tetronimo * tet);
     bool RoomDownInside(Tetronimo * tet);
-    bool OverLap(Tetronimo * tet);
+    bool OverLap( std::vector< std::vector <int> >, unsigned int h, unsigned int v );
     void SetPiece(Tetronimo * tet);
     void Settle();
     unsigned int MinHeight(Tetronimo * tet);
