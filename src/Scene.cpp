@@ -3,16 +3,15 @@
 #include "BallObject.h"
 #include "ExplosionPiece.h"
 #include "WormPiece.h"
+
+#include "PieceGenerator.h"
 #include <time.h>
 
 Scene::Scene ()
 {
     srand(time(NULL));
 
-	if( rand()%2 == 0 )
-        _currentPiece = new WormPiece;
-    else
-        _currentPiece = new ExplosionPiece;
+	_currentPiece = PieceGenerator::Instance()->PopPiece();
 }
 
 Scene::~Scene ()
@@ -29,10 +28,7 @@ void Scene::Update ()
     if( _currentPiece->Sits() )
     {
         delete _currentPiece;
-        if( rand()%2 == 0 )
-            _currentPiece = new WormPiece;
-        else
-            _currentPiece = new ExplosionPiece;
+        _currentPiece = PieceGenerator::Instance()->PopPiece();
     }
 }
 
@@ -41,6 +37,8 @@ void Scene::Display ()
 	BackgroundGrid::Instance()->Draw();
 
 	_currentPiece->Draw();
+
+	PieceGenerator::Instance()->Draw();
 
 }
 
