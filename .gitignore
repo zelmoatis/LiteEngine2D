@@ -32,3 +32,8 @@ __pycache__
 *.log
 *.txt
 
+# CodeBlocks
+*.depend
+*.layout
+*.cpb
+

@@ -58,8 +58,10 @@
 		<Unit filename="../../include/Image.h" />
 		<Unit filename="../../include/ImageLoader.h" />
 		<Unit filename="../../include/Input.h" />
+		<Unit filename="../../include/Node.h" />
 		<Unit filename="../../include/NonRotatableTetromino.h" />
 		<Unit filename="../../include/Object.h" />
+		<Unit filename="../../include/PieceGenerator.h" />
 		<Unit filename="../../include/ResourceLoader.h" />
 		<Unit filename="../../include/Resources.h" />
 		<Unit filename="../../include/RotatableTetromino.h" />
@@ -82,6 +84,7 @@
 		<Unit filename="../../src/Input.cpp" />
 		<Unit filename="../../src/NonRotatableTetromino.cpp" />
 		<Unit filename="../../src/Object.cpp" />
+		<Unit filename="../../src/PieceGenerator.cpp" />
 		<Unit filename="../../src/Resources.cpp" />
 		<Unit filename="../../src/RotatableTetromino.cpp" />
 		<Unit filename="../../src/Scene.cpp" />

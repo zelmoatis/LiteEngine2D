@@ -975,7 +975,7 @@
 1461148648 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\game.h
 	"Scene.h"
 
-1463830696 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\scene.h
+1464137793 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\scene.h
 	<vector>
 	"SceneObject.h"
 	"Tetromino.h"
@@ -1056,12 +1056,13 @@
 	"Image.h"
 	"Vector2.h"
 
-1463844211 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\scene.cpp
+1464166492 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\scene.cpp
 	"Scene.h"
 	"BackgroundGrid.h"
 	"BallObject.h"
 	"ExplosionPiece.h"
 	"WormPiece.h"
+	"PieceGenerator.h"
 	<time.h>
 
 1461148648 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\sceneobject.cpp
@@ -1161,4 +1162,27 @@
 
 1463839500 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\tetromino.cpp
 	"Tetromino.h"
+
+1464167342 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\piecegenerator.cpp
+	"PieceGenerator.h"
+	<time.h>
+	<cstdio>
+	"Tetromino.h"
+	"ExplosionPiece.h"
+	"WormPiece.h"
+	"BackgroundGrid.h"
+	"Resources.h"
+	"Screen.h"
+	"Node.h"
+
+1464165542 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\piecegenerator.h
+	"SceneObject.h"
+	"Tetromino.h"
+	"Vector2.h"
+	"Image.h"
+	"Node.h"
+
+1464165025 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\node.h
+
+1464165025 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\node.cpp
 
