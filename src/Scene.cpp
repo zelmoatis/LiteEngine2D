@@ -3,14 +3,14 @@
 #include "BallObject.h"
 #include "ExplosionPiece.h"
 #include "WormPiece.h"
-
+//#include "JPiece.h"
 #include "PieceGenerator.h"
 #include <time.h>
 
 Scene::Scene ()
 {
     srand(time(NULL));
-
+    _running = true;
 	_currentPiece = PieceGenerator::Instance()->PopPiece();
 }
 
@@ -21,14 +21,21 @@ Scene::~Scene ()
 
 void Scene::Update ()
 {
-	BackgroundGrid::Instance()->Update();
-
-	_currentPiece->Update();
-
-    if( _currentPiece->Sits() )
+    if( Scene::_running == true )
     {
-        delete _currentPiece;
-        _currentPiece = PieceGenerator::Instance()->PopPiece();
+        BackgroundGrid::Instance()->Update();
+
+        _currentPiece->Update();
+
+        if( _currentPiece->Sits() )
+        {
+            delete _currentPiece;
+            _currentPiece = PieceGenerator::Instance()->PopPiece();
+        }
+        if( BackgroundGrid::Instance()->ReachedTop() )
+        {
+            _running = false;
+        }
     }
 }
 

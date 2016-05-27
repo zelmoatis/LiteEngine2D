@@ -14,14 +14,14 @@ private:
     unsigned int _pileTop;
     static BackgroundGrid* _BG_instance;
     BackgroundGrid();
+    BackgroundGrid(const BackgroundGrid&);
+    BackgroundGrid& operator=(const BackgroundGrid&);
     ~BackgroundGrid();
     void Lower( unsigned int v );
     void LineClear( unsigned int v );
     bool FullLine( unsigned int v );
     bool EmptyLine( unsigned int v );
-    Image * _colors[7];
 public:
-    unsigned int GetPileTop();
     static BackgroundGrid * Instance();
     void show_grid();
     void Draw ();
@@ -33,6 +33,7 @@ public:
     bool OverLap( std::vector< std::vector <int> >, unsigned int h, unsigned int v );
     void SetPiece(Tetromino * tet);
     void Settle();
+    bool ReachedTop();
     unsigned int MinHeight(Tetromino * tet);
 };
 

@@ -9,6 +9,7 @@
 class Scene
 {
 private:
+    bool _running;
     Tetromino * _currentPiece;
 public:
 	Scene ();

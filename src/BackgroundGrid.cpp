@@ -1,12 +1,12 @@
 #include "BackgroundGrid.h"
 
-#include "Resources.h"
 
+#include "ResourceManager.h"
 #include "Screen.h"
-#include "Input.h"
 #include "Vector2.h"
 #include <vector>
 #include <iostream>
+#include <string>
 
 #include <cstdlib>
 
@@ -34,21 +34,13 @@ _grid[23] = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
 
 //show_grid();
 _pileTop = 23;
-_image = Resources::LoadImage ("Assets/Images/badris/grid.png");
+_image =(Image*) ResourceManager::Instance()->GetResource("grid.png");
 _position = Vector2(0,Screen::GetHeight ())+ Vector2( Screen::GetWidth() / 2 - _image->GetWidth() / 2, 0 );
-_colors[0] = Resources::LoadImage ("Assets/Images/badris/1.png");
-_colors[1] = Resources::LoadImage ("Assets/Images/badris/2.png");
+
 }
 
 BackgroundGrid::~BackgroundGrid(){
-delete _image;
-for(int i = 0; i < 7; i ++ )
-    delete _colors[i];
 
-}
-
-unsigned int BackgroundGrid::GetPileTop(){
-return _pileTop;
 }
 
 void BackgroundGrid::show_grid(){
@@ -145,9 +137,13 @@ for( unsigned int i = 23; i >= _pileTop; i-- )
 {
     for( unsigned int j = 0; j <10; j++ )
     {
-        if( _grid[i][1+j] != 0 && _grid[i][1+j] != 9 )
-            {
-            Screen::Draw( _colors[ _grid[i][1+j]-1 ] , Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( j * 31, -(int)(i * 31)) );
+        if( _grid[i][1+j] > 0 && _grid[i][1+j] < 9 )
+            {char x = _grid[i][1+j] + 48;
+            std::string lb;
+            lb += "color";
+            lb += x;
+            lb += ".png";
+            Screen::Draw( (Image*)ResourceManager::Instance()->GetResource(lb) , Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( j * 31, -(int)(i * 31)) );
             }
     }
 }
@@ -218,3 +214,8 @@ return false;
 
 }
 
+bool BackgroundGrid::ReachedTop(){
+if(_pileTop <= 3)
+    return true;
+return false;
+}
