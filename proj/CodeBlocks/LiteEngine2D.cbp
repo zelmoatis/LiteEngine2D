@@ -50,7 +50,6 @@
 		</Compiler>
 		<Unit filename="../../include/BackgroundGrid.h" />
 		<Unit filename="../../include/BallObject.h" />
-		<Unit filename="../../include/BasicSquare.h" />
 		<Unit filename="../../include/ExplosionPiece.h" />
 		<Unit filename="../../include/Game.h" />
 		<Unit filename="../../include/GameEngine.h" />
@@ -58,11 +57,13 @@
 		<Unit filename="../../include/Image.h" />
 		<Unit filename="../../include/ImageLoader.h" />
 		<Unit filename="../../include/Input.h" />
+		<Unit filename="../../include/JPiece.h" />
 		<Unit filename="../../include/Node.h" />
 		<Unit filename="../../include/NonRotatableTetromino.h" />
 		<Unit filename="../../include/Object.h" />
 		<Unit filename="../../include/PieceGenerator.h" />
 		<Unit filename="../../include/ResourceLoader.h" />
+		<Unit filename="../../include/ResourceManager.h" />
 		<Unit filename="../../include/Resources.h" />
 		<Unit filename="../../include/RotatableTetromino.h" />
 		<Unit filename="../../include/Scene.h" />
@@ -74,7 +75,6 @@
 		<Unit filename="../../include/WormPiece.h" />
 		<Unit filename="../../src/BackgroundGrid.cpp" />
 		<Unit filename="../../src/BallObject.cpp" />
-		<Unit filename="../../src/BasicSquare.cpp" />
 		<Unit filename="../../src/ExplosionPiece.cpp" />
 		<Unit filename="../../src/Game.cpp" />
 		<Unit filename="../../src/GameEngine.cpp" />
@@ -82,9 +82,11 @@
 		<Unit filename="../../src/Image.cpp" />
 		<Unit filename="../../src/ImageLoader.cpp" />
 		<Unit filename="../../src/Input.cpp" />
+		<Unit filename="../../src/JPiece.cpp" />
 		<Unit filename="../../src/NonRotatableTetromino.cpp" />
 		<Unit filename="../../src/Object.cpp" />
 		<Unit filename="../../src/PieceGenerator.cpp" />
+		<Unit filename="../../src/ResourceManager.cpp" />
 		<Unit filename="../../src/Resources.cpp" />
 		<Unit filename="../../src/RotatableTetromino.cpp" />
 		<Unit filename="../../src/Scene.cpp" />
