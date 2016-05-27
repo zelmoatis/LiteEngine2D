@@ -19,8 +19,6 @@ RotatableTetromino::RotatableTetromino()
 }
 
 RotatableTetromino::~RotatableTetromino(){
-for( int i = 0; i < 4; i ++ )
-    delete _image[i];
 }
 
 void RotatableTetromino::Draw(){
@@ -28,10 +26,9 @@ Screen::Draw( _image[_rotation],_position );
 }
 
 void RotatableTetromino::Update(){
-unsigned int top = BackgroundGrid::Instance()->GetPileTop();
-if(top<=3)
+
+if(BackgroundGrid::Instance()->ReachedTop())
 {
-    std::cout<<"GAME OVER ";
     return;
 }
 

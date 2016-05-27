@@ -5,7 +5,6 @@
 #include "SceneObject.h"
 #include "Tetromino.h"
 #include "Vector2.h"
-#include "Image.h"
 #include "Node.h"
 
 
@@ -15,9 +14,10 @@ class PieceGenerator: public SceneObject{
     Node *_end;
     unsigned int _max;
     Vector2 _position;
-    Image * _images[2];
     static PieceGenerator* _PGEN_instance;
     PieceGenerator();
+    PieceGenerator& operator=(const PieceGenerator&);
+    PieceGenerator(const PieceGenerator&);
     ~PieceGenerator();
 public:
     static PieceGenerator * Instance();

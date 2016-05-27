@@ -1,7 +1,6 @@
 #include "WormPiece.h"
 
-#include "Resources.h"
-
+#include "ResourceManager.h"
 #include "BackgroundGrid.h"
 #include "Screen.h"
 #include "Input.h"
@@ -10,10 +9,10 @@
 
 WormPiece::WormPiece():RotatableTetromino()
 {
-_image[0] = Resources::LoadImage("Assets/Images/badris/2piece_0.png");
-_image[1] = Resources::LoadImage("Assets/Images/badris/2piece_1.png");
-_image[2] = Resources::LoadImage("Assets/Images/badris/2piece_0.png");
-_image[3] = Resources::LoadImage("Assets/Images/badris/2piece_1.png");
+_image[0] = (Image*)ResourceManager::Instance()->GetResource("piece2_0.png");
+_image[1] = (Image*)ResourceManager::Instance()->GetResource("piece2_1.png");
+_image[2] = (Image*)ResourceManager::Instance()->GetResource("piece2_0.png");
+_image[3] = (Image*)ResourceManager::Instance()->GetResource("piece2_1.png");
 
 _vPos++;
 

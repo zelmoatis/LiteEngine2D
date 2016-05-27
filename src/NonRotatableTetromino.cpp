@@ -20,7 +20,6 @@ NonRotatableTetromino::NonRotatableTetromino():Tetromino()
 }
 
 NonRotatableTetromino::~NonRotatableTetromino(){
-delete _image;
 }
 
 void NonRotatableTetromino::Draw(){
@@ -29,10 +28,9 @@ Screen::Draw( _image,_position );
 
 void NonRotatableTetromino::Update(){
 
-unsigned int top = BackgroundGrid::Instance()->GetPileTop();
-if(top<=3)
+
+if(BackgroundGrid::Instance()->ReachedTop())
 {
-    std::cout<<"GAME OVER ";
     return;
 }
 

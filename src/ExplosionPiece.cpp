@@ -1,7 +1,6 @@
 #include "ExplosionPiece.h"
 
-#include "Resources.h"
-
+#include "ResourceManager.h"
 #include "BackgroundGrid.h"
 #include "Screen.h"
 #include "Input.h"
@@ -10,7 +9,7 @@
 
 ExplosionPiece::ExplosionPiece():NonRotatableTetromino()
 {
-_image = Resources::LoadImage("Assets/Images/badris/1piece.png");
+_image = (Image*)ResourceManager::Instance()->GetResource("piece1_0.png");
 
 _shape.resize(3);
 _shape[0] = { 1, 0, 1 };

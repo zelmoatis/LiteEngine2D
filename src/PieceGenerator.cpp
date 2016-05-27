@@ -4,11 +4,12 @@
 #include "Tetromino.h"
 #include "ExplosionPiece.h"
 #include "WormPiece.h"
+#include "JPiece.h"
 #include "BackgroundGrid.h"
-#include "Resources.h"
+#include "ResourceManager.h"
 #include "Screen.h"
 #include "Node.h"
-#define PCS_NR 2
+#define PCS_NR 3
 PieceGenerator* PieceGenerator:: _PGEN_instance = 0;
 
 PieceGenerator* PieceGenerator::Instance(){
@@ -28,17 +29,19 @@ _front = new Node;
 Node * it = _front;
 for( unsigned int i = 0; i < _max-1; i ++ )
 {
-    it -> val = rand()%PCS_NR;//numarul de tipuri de piese
+    it -> val = 1 + rand()%PCS_NR;//numarul de tipuri de piese
+    if( it -> val == 3 )
+        it -> val = 7;
     it -> previous = new Node;
     it = it -> previous;
 }
-it -> val = rand()%PCS_NR;
+it -> val = 1 + rand()%PCS_NR;
+if( it -> val == 3 )
+        it -> val = 7;
 it -> previous = NULL;
 _end = it;
 
 _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( - 31*5, 0 );
-_images[0] = Resources::LoadImage("Assets/Images/badris/1piece.png");
-_images[1] = Resources::LoadImage("Assets/Images/badris/2piece_0.png");
 }
 
 PieceGenerator::~PieceGenerator(){
@@ -49,10 +52,7 @@ while( it -> previous )
     it = it -> previous;
     delete temp;
 }
-for( int i = 0; i < 2; i ++ )
-{
-    delete _images[i];
-}
+
 }
 
 Tetromino * PieceGenerator::PopPiece(){
@@ -60,15 +60,20 @@ Tetromino * newPiece;
 srand(time(NULL));
 switch( _front->val )
 {
-case 0:
+case 1:
     {
         newPiece = new ExplosionPiece;
         break;
     }
 
-case 1:
+case 2:
     {
         newPiece = new WormPiece;
+        break;
+    }
+case 7:
+    {
+        newPiece = new JPiece;
         break;
     }
 default:
@@ -80,7 +85,9 @@ default:
 
 Node * temp = new Node;
 
-temp -> val = rand()%PCS_NR;
+temp -> val = 1 + rand()%PCS_NR;
+if( temp -> val == 3 )
+        temp -> val = 7;
 _end -> previous = temp;
 _end = temp;
 _end -> previous = NULL;
@@ -97,8 +104,13 @@ int height = 0;
 Node * temp = _front;
 while( temp )
 {
-    Vector2 vectPos(0, -( height*31*4+31*4-(int)_images[temp->val]->GetHeight() + 31 ) );
-    Screen::Draw(_images[temp->val], _position + vectPos );
+    char x = temp->val + 48;
+    std::string lb;
+    lb += "piece";
+    lb += x;
+    lb += "_0.png";
+    Vector2 vectPos(0, -( height*31*4 + 31 ) );
+    Screen::Draw( (Image*)ResourceManager::Instance()->GetResource(lb), _position + vectPos );
     height++;
     temp = temp -> previous;
 }
