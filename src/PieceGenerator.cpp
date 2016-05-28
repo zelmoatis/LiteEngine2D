@@ -5,11 +5,15 @@
 #include "ExplosionPiece.h"
 #include "WormPiece.h"
 #include "JPiece.h"
+#include "TwinsPiece.h"
+#include "RArrowPiece.h"
+#include "LArrowPiece.h"
+#include "LPiece.h"
 #include "BackgroundGrid.h"
 #include "ResourceManager.h"
 #include "Screen.h"
 #include "Node.h"
-#define PCS_NR 3
+#define PCS_NR 7
 PieceGenerator* PieceGenerator:: _PGEN_instance = 0;
 
 PieceGenerator* PieceGenerator::Instance(){
@@ -30,14 +34,11 @@ Node * it = _front;
 for( unsigned int i = 0; i < _max-1; i ++ )
 {
     it -> val = 1 + rand()%PCS_NR;//numarul de tipuri de piese
-    if( it -> val == 3 )
-        it -> val = 7;
     it -> previous = new Node;
     it = it -> previous;
 }
 it -> val = 1 + rand()%PCS_NR;
-if( it -> val == 3 )
-        it -> val = 7;
+
 it -> previous = NULL;
 _end = it;
 
@@ -71,6 +72,26 @@ case 2:
         newPiece = new WormPiece;
         break;
     }
+case 3:
+    {
+        newPiece = new LArrowPiece;
+        break;
+    }
+case 4:
+    {
+        newPiece = new RArrowPiece;
+        break;
+    }
+case 5:
+    {
+        newPiece = new LPiece;
+        break;
+    }
+case 6:
+    {
+        newPiece = new TwinsPiece;
+        break;
+    }
 case 7:
     {
         newPiece = new JPiece;
@@ -86,8 +107,7 @@ default:
 Node * temp = new Node;
 
 temp -> val = 1 + rand()%PCS_NR;
-if( temp -> val == 3 )
-        temp -> val = 7;
+
 _end -> previous = temp;
 _end = temp;
 _end -> previous = NULL;

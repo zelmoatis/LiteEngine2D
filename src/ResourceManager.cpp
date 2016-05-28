@@ -38,7 +38,7 @@ void ResourceManager::AddResource(const std::string& label)
 std::string path = "Assets/Images/" + label;
 _res_map[label] = Resources::LoadImage (path);
 _resource_counter++;
-std::cout<<_resource_counter;
+
 }
 
 Object* ResourceManager::GetResource(const std::string& label){

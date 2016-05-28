@@ -1,9 +1,5 @@
 #include "Scene.h"
 #include "BackgroundGrid.h"
-#include "BallObject.h"
-#include "ExplosionPiece.h"
-#include "WormPiece.h"
-//#include "JPiece.h"
 #include "PieceGenerator.h"
 #include <time.h>
 
@@ -24,9 +20,7 @@ void Scene::Update ()
     if( Scene::_running == true )
     {
         BackgroundGrid::Instance()->Update();
-
         _currentPiece->Update();
-
         if( _currentPiece->Sits() )
         {
             delete _currentPiece;
