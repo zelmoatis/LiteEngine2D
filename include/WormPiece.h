@@ -10,6 +10,7 @@ public:
     ~WormPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 
 #endif // WORM_PIECE_H

@@ -53,8 +53,6 @@ for( int i = 0; i < 24; i ++ )
     std::cout<<"\n";
 }
 std::cout<<"\n";
-std::cout<<"pile top:"<<_pileTop<<"\n";
-
 }
 
 unsigned int BackgroundGrid::MinHeight(Tetromino * tet){
@@ -197,8 +195,12 @@ for( unsigned int i = 0; i < tempShape.size(); i ++ )
             _grid[v+i][1+h+j] = tempShape[i][j];
         }
     }
+//show_grid();
+//std::cout<<"v == "<<v<<"\n"<<"first pile top == "<<_pileTop<<"\n";
 if(v<_pileTop)
     _pileTop = v;
+//std::cout<<"now pile top == "<<_pileTop<<"\n";
+
 }
 
 bool BackgroundGrid::OverLap( std::vector< std::vector <int> >  tempShape, unsigned int v, unsigned int h ){
@@ -221,3 +223,4 @@ if(_pileTop <= 3)
     return true;
 return false;
 }
+

@@ -5,6 +5,7 @@
 #include "Input.h"
 #include "GameTime.h"
 #include "Vector2.h"
+#include "ResourceManager.h"
 
 #include <cstdlib>
 #include <iostream>
@@ -24,6 +25,8 @@ NonRotatableTetromino::~NonRotatableTetromino(){
 
 void NonRotatableTetromino::Draw(){
 Screen::Draw( _image,_position );
+
+DrawShadow();
 }
 
 void NonRotatableTetromino::Update(){
@@ -33,6 +36,7 @@ if(BackgroundGrid::Instance()->ReachedTop())
 {
     return;
 }
+
 
 Vector2 SideMovement = Vector2::Zero;
 Vector2 DownMovement = Vector2::Zero;
@@ -93,3 +97,10 @@ _hPos +=hMovement;
 _vPos +=vMovement;
 }
 
+void NonRotatableTetromino::DrawShadow(){
+unsigned int v = _vPos + BackgroundGrid::Instance()->MinHeight(this) -1;
+unsigned int h = _hPos;
+Image* shadow = _image;
+Screen::Draw( shadow , Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( h * 31, -(int)(v * 31)) );
+
+}

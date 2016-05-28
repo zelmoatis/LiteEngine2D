@@ -33,3 +33,7 @@ return 3;
 unsigned int ExplosionPiece::GetWidth(){
 return 3;
 }
+
+unsigned int ExplosionPiece::GetNumber(){
+return 1;
+}

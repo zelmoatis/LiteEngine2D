@@ -43,6 +43,8 @@ if( _rotation == 0 || _rotation == 2 )
 return 2;
 }
 
-
+unsigned int RArrowPiece::GetNumber(){
+return 4;
+}
 
 

@@ -46,3 +46,6 @@ return _shape[0].size();
 bool Tetromino::Sits(){
 return _sits;
 }
+unsigned int Tetromino::GetNumber(){
+
+}

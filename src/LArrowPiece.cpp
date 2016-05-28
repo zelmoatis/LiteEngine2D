@@ -43,7 +43,9 @@ if( _rotation == 0 || _rotation == 2 )
 return 2;
 }
 
-
+unsigned int LArrowPiece::GetNumber(){
+return 3;
+}
 
 
 

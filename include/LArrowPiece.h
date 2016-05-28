@@ -10,6 +10,7 @@ public:
     ~LArrowPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 #endif // LARROW_PIECE_H
 

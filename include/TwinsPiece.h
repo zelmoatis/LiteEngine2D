@@ -10,6 +10,7 @@ public:
     ~TwinsPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 
 #endif // TWINS_PIECE_H

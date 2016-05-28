@@ -10,12 +10,13 @@ protected:
     Image *_image;
     Vector2 _position;//directly related to h_pos and v_pos, maybe useless
     Vector2 _destination;//directly related to grid
-
+    void DrawShadow();
 public:
     NonRotatableTetromino();
     virtual ~NonRotatableTetromino();
     virtual void Draw();
     virtual void Update();
+
 };
 
 #endif // NON_ROTATABLE_TETROMINO_H

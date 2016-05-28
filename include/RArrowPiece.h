@@ -10,5 +10,6 @@ public:
     ~RArrowPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 #endif // RARROW_PIECE_H

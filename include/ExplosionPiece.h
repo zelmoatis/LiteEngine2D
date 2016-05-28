@@ -10,6 +10,7 @@ public:
     ~ExplosionPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 
 #endif // EXPLOSION_PIECE_H

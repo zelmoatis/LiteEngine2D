@@ -21,6 +21,7 @@ public:
     virtual std::vector< std::vector <int> > GetShape();//maybe can be improved by returning only a reference or pointer
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
     bool Sits();
 };
 

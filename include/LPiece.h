@@ -10,6 +10,7 @@ public:
     ~LPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 
 #endif // L_PIECE_H

@@ -39,6 +39,7 @@ unsigned int LPiece::GetWidth(){
 return 3;
 }
 
-
-
+unsigned int LPiece::GetNumber(){
+return 5;
+}
 

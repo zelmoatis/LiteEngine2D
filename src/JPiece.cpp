@@ -39,5 +39,9 @@ unsigned int JPiece::GetWidth(){
 return 3;
 }
 
+unsigned int JPiece::GetNumber(){
+return 7;
+}
+
 
 

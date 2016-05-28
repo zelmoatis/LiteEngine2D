@@ -10,6 +10,7 @@ public:
     ~JPiece();
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
+    virtual unsigned int GetNumber();
 };
 
 #endif // J_PIECE_H
