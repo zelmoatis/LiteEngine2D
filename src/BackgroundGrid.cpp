@@ -53,6 +53,7 @@ for( int i = 0; i < 24; i ++ )
     std::cout<<"\n";
 }
 std::cout<<"\n";
+std::cout<<"pile top:"<<_pileTop<<"\n";
 
 }
 
@@ -108,6 +109,7 @@ for( int i = 0; i < 10; i ++ )
 }
 
 void BackgroundGrid::Settle(){
+//std::cout<<"settling...\n";
 unsigned int i = _pileTop;
 while( i < 23 && EmptyLine(i) )
 {
