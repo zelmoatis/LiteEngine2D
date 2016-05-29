@@ -35,6 +35,7 @@ if(BackgroundGrid::Instance()->ReachedTop())
     return;
 }
 
+
 Vector2 SideMovement = Vector2::Zero;
 Vector2 DownMovement = Vector2::Zero;
 int hMovement = 0, vMovement = 0;

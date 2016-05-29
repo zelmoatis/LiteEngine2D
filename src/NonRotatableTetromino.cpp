@@ -15,7 +15,7 @@
 #define INIT_POS_V 0
 
 
-NonRotatableTetromino::NonRotatableTetromino():Tetromino()
+NonRotatableTetromino::NonRotatableTetromino()
 {
 
 }
@@ -36,7 +36,6 @@ if(BackgroundGrid::Instance()->ReachedTop())
 {
     return;
 }
-
 
 Vector2 SideMovement = Vector2::Zero;
 Vector2 DownMovement = Vector2::Zero;
