@@ -9,7 +9,9 @@
 class Scene
 {
 private:
+    unsigned int _pauseTimeMS;
     bool _running;
+    bool _paused;
     Tetromino * _currentPiece;
 public:
 	Scene ();
