@@ -42,7 +42,7 @@ it -> val = 1 + rand()%PCS_NR;
 it -> previous = NULL;
 _end = it;
 
-_position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( - 31*5, 0 );
+_position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( - 31*5, -93 );
 }
 
 PieceGenerator::~PieceGenerator(){
