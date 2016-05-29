@@ -22,7 +22,6 @@ _shape[2] = { 0, 7, 7 };
 
 _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2(_hPos * 31, -(int)(_vPos * 31));
 
-_lastStepMS = GameTime::GetTimeMS();
 
 _rotation = 0;
 }

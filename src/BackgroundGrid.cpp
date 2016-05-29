@@ -35,7 +35,7 @@ _grid[23] = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
 //show_grid();
 _pileTop = 23;
 _image =(Image*) ResourceManager::Instance()->GetResource("grid.png");
-_position = Vector2(0,Screen::GetHeight ())+ Vector2( Screen::GetWidth() / 2 - _image->GetWidth() / 2, 0 );
+_position = Vector2(0,Screen::GetHeight ())+ Vector2( Screen::GetWidth() / 2 - _image->GetWidth() / 2, 93 );
 
 }
 
