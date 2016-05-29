@@ -1,4 +1,5 @@
 #include "Tetromino.h"
+#include "GameTime.h"
 
 #define INIT_POS_H 4
 #define INIT_POS_V 0
@@ -8,7 +9,7 @@ Tetromino::Tetromino():
     _vPos(INIT_POS_V),
     _sits(false)
     {
-
+_lastStepMS = GameTime::GetTimeMS();
 }
 
 Tetromino::~Tetromino(){
@@ -46,6 +47,11 @@ return _shape[0].size();
 bool Tetromino::Sits(){
 return _sits;
 }
-unsigned int Tetromino::GetNumber(){
 
+void Tetromino::SetLastStep(unsigned int x){
+_lastStepMS = x;
+}
+
+unsigned int Tetromino::GetLastStep(){
+return _lastStepMS;
 }

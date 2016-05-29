@@ -9,7 +9,7 @@ class Tetromino: public SceneObject{
 protected:
     std::vector< std::vector< int > > _shape;//every piece has an individual number used for its shape
     unsigned int _hPos, _vPos;
-    int _lastStepMS;
+    unsigned int _lastStepMS;
     bool _sits;
 public:
     Tetromino();
@@ -21,8 +21,10 @@ public:
     virtual std::vector< std::vector <int> > GetShape();//maybe can be improved by returning only a reference or pointer
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
-    virtual unsigned int GetNumber();
+    virtual unsigned int GetNumber()=0;
     bool Sits();
+    virtual void SetLastStep (unsigned int);
+    virtual unsigned int GetLastStep ();
 };
 
 
