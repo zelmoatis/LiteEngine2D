@@ -8,10 +8,12 @@
 #include "Vector2.h"
 class BackgroundGrid: public SceneObject{
 private:
-    Image * _image;
     std::vector< std::vector< int > > _grid;
     Vector2 _position;
+    Image * _image;
     unsigned int _pileTop;
+    unsigned int _pieces;
+    unsigned int _clearedLines;
     static BackgroundGrid* _BG_instance;
     BackgroundGrid();
     BackgroundGrid(const BackgroundGrid&);
@@ -35,6 +37,8 @@ public:
     void Settle();
     bool ReachedTop();
     unsigned int MinHeight(Tetromino * tet);
+    unsigned int GetClearedLines();
+    unsigned int GetPieces();
 };
 
 #endif // BACKGROUND_GRID_OBJ_H

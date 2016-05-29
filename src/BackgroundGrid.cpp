@@ -33,6 +33,8 @@ for( int i = 0; i < 23; i ++ )
 _grid[23] = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
 
 //show_grid();
+_clearedLines = 0;
+_pieces = 0;
 _pileTop = 23;
 _image =(Image*) ResourceManager::Instance()->GetResource("grid.png");
 _position = Vector2(0,Screen::GetHeight ())+ Vector2( Screen::GetWidth() / 2 - _image->GetWidth() / 2, 3*31 );
@@ -120,7 +122,7 @@ while( i < 23 )
     {
         LineClear(i);
         Lower(i);
-        //counter++;
+        _clearedLines++;
         i = _pileTop;
     }
     else
@@ -197,6 +199,7 @@ for( unsigned int i = 0; i < tempShape.size(); i ++ )
     }
 //show_grid();
 //std::cout<<"v == "<<v<<"\n"<<"first pile top == "<<_pileTop<<"\n";
+_pieces ++;
 if(v<_pileTop)
     _pileTop = v;
 //std::cout<<"now pile top == "<<_pileTop<<"\n";
@@ -224,3 +227,11 @@ if(_pileTop <= 3)
 return false;
 }
 
+unsigned int BackgroundGrid::GetClearedLines(){
+return _clearedLines;
+}
+
+
+unsigned int BackgroundGrid::GetPieces(){
+return _pieces;
+}
