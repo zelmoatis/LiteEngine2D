@@ -10,6 +10,7 @@ Scene::Scene ()
     _running = true;
     _paused = false;
 	_currentPiece = PieceGenerator::Instance()->PopPiece();
+	_player = new Player;
 }
 
 Scene::~Scene ()
@@ -25,6 +26,7 @@ void Scene::Update ()
         if( Input::GetKeyDown('`') || PauseMenu::Instance()->GetState() )
             {
                 _currentPiece -> SetLastStep( GameTime::GetTimeMS() - (_pauseTimeMS - _currentPiece -> GetLastStep() ) );
+                _player -> SetStart( GameTime::GetTimeMS() - _pauseTimeMS + _player -> GetStart() );
                 _paused = false;
             }
         return;
@@ -33,6 +35,7 @@ void Scene::Update ()
     {
         BackgroundGrid::Instance()->Update();
         _currentPiece->Update();
+        _player->Update();
         if( _currentPiece->Sits() )
         {
             delete _currentPiece;
@@ -62,6 +65,8 @@ void Scene::Display ()
     {
         PauseMenu::Instance()->Draw();
     }
+    else
+        _player->Draw();
 }
 
 void Scene::Clear ()

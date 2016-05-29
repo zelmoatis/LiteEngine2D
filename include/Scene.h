@@ -5,14 +5,17 @@
 
 #include "SceneObject.h"
 #include "Tetromino.h"
+#include "Player.h"
 
 class Scene
 {
 private:
+    Tetromino * _currentPiece;
+    Player * _player;
     unsigned int _pauseTimeMS;
     bool _running;
     bool _paused;
-    Tetromino * _currentPiece;
+
 public:
 	Scene ();
 	~Scene ();
