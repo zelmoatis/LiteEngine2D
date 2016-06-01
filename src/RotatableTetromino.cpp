@@ -9,7 +9,6 @@
 
 #include <cstdlib>
 #include <iostream>
-#define TURN 1000
 
 #define INIT_POS_H 4
 #define INIT_POS_V 0
@@ -23,9 +22,9 @@ RotatableTetromino::~RotatableTetromino(){
 }
 
 void RotatableTetromino::Draw(){
+DrawShadow();
 Screen::Draw( _image[_rotation],_position );
 
-DrawShadow();
 }
 
 void RotatableTetromino::Update(){
@@ -35,7 +34,7 @@ if(BackgroundGrid::Instance()->ReachedTop())
     return;
 }
 
-
+unsigned int _turn = BackgroundGrid::Instance()->GetTurn();
 Vector2 SideMovement = Vector2::Zero;
 Vector2 DownMovement = Vector2::Zero;
 int hMovement = 0, vMovement = 0;
@@ -70,12 +69,13 @@ if(Input::GetKeyDown('p'))
         RotateLeft();
 }
 
-if(Input::GetKeyDown('s'))
+
+if(Input::GetKeyDown('w'))
 {
     unsigned int minimum = BackgroundGrid::Instance()->MinHeight(this) -1;
     _vPos += minimum;
     _position += Vector2( 0, -(int)( minimum*31 ) );
-    _lastStepMS += TURN;
+    _lastStepMS += _turn;
     BackgroundGrid::Instance()->SetPiece(this);
     //BackgroundGrid::Instance()->show_grid();
     //BackgroundGrid::Instance()->show_piletop();
@@ -84,11 +84,16 @@ if(Input::GetKeyDown('s'))
     return;
 }
 
-if( GameTime::GetTimeMS() - _lastStepMS > TURN )
+if( GameTime::GetTimeMS() - _lastStepMS > _turn )
 {
+    if(Input::GetKey('s'))
+    {
+        _turn = 50;
+    }
+
     if( BackgroundGrid::Instance()->RoomDown(this) )
     {
-        _lastStepMS += TURN;
+        _lastStepMS += _turn;
         DownMovement += Vector2( 0, -31 );
         vMovement = 1;
     }
@@ -211,8 +216,15 @@ _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( _hPos 
 void RotatableTetromino::DrawShadow(){
 unsigned int v = _vPos + BackgroundGrid::Instance()->MinHeight(this) -1;
 unsigned int h = _hPos;
-Image * shadow = _image[_rotation];
+char x = GetNumber()+48;
+std::string lb = "shadow";
+lb += x;
+x = _rotation+48;
+lb += "_";
+lb += x;
+lb += ".png";
 
+Image* shadow = (Image*)ResourceManager::Instance()->GetResource(lb);
 Screen::Draw( shadow, Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( h * 31, -(int)(v * 31)) );
 
 }
