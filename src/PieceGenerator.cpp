@@ -46,14 +46,7 @@ _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2( - 31*5
 }
 
 PieceGenerator::~PieceGenerator(){
-Node *it = _front;
-while( it -> previous )
-{
-    Node * temp = it;
-    it = it -> previous;
-    delete temp;
-}
-
+    Clear();
 }
 
 Tetromino * PieceGenerator::PopPiece(){
@@ -115,7 +108,6 @@ _end -> previous = NULL;
 temp = _front;
 _front = _front -> previous;
 delete temp;
-
 return newPiece;
 }
 
@@ -148,4 +140,36 @@ for( unsigned int i = 0; i < _max-1; i ++ )
     std::cout<<it->val<<"\n";
     it = it -> previous;
 }
+}
+
+void PieceGenerator::Clear(){
+
+Node *it = _front;
+while( it -> previous )
+{
+    Node * temp = it;
+    it = it -> previous;
+    delete temp;
+}
+
+}
+
+void PieceGenerator::Reset(){
+
+Clear();
+
+srand(time(NULL));
+_front = new Node;
+Node * it = _front;
+for( unsigned int i = 0; i < _max-1; i ++ )
+{
+    it -> val = 1 + rand()%PCS_NR;//numarul de tipuri de piese
+    it -> previous = new Node;
+    it = it -> previous;
+}
+it -> val = 1 + rand()%PCS_NR;
+
+it -> previous = NULL;
+_end = it;
+
 }
