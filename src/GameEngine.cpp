@@ -12,6 +12,7 @@ void GameEngine::Init ()
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
 
+
 	Screen::Init ();
 }
 
