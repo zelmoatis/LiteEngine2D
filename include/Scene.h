@@ -11,7 +11,6 @@ class Scene
 {
 private:
     Tetromino * _currentPiece;
-    Player * _player;
     unsigned int _pauseTimeMS;
     bool _running;
     bool _paused;
@@ -19,10 +18,10 @@ private:
 public:
 	Scene ();
 	~Scene ();
-
+    Player * _player;
 	void Update ();
 	void Display ();
-
+    void Reset ();
 	void Clear ();
 };
 

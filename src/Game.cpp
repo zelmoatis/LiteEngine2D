@@ -9,6 +9,8 @@
 #include "GameTime.h"
 #include "Input.h"
 #include "Screen.h"
+#include "PauseMenu.h"
+#include "GameOverMenu.h"
 
 #define FRAMES_PER_SECOND 1000
 #define TIME_PER_FRAME (1000 / FRAMES_PER_SECOND)
@@ -44,8 +46,9 @@ void Game::Start ()
 		GameTime::UpdateFrame ();
 		Input::UpdateState ();
 
-        if (Input::GetQuit () || Input::GetKeyDown (27)) {
+        if (Input::GetQuit () || PauseMenu::Instance()->GetState("end") || GameOverMenu::Instance()->GetState("end")) {
         	running = false;
+        	_currentScene->_player->SaveScore();
         	continue;
         }
 
