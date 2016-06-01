@@ -14,6 +14,7 @@ private:
     unsigned int _pileTop;
     unsigned int _pieces;
     unsigned int _clearedLines;
+    unsigned int _pieceTurn;
     static BackgroundGrid* _BG_instance;
     BackgroundGrid();
     BackgroundGrid(const BackgroundGrid&);
@@ -39,6 +40,8 @@ public:
     unsigned int MinHeight(Tetromino * tet);
     unsigned int GetClearedLines();
     unsigned int GetPieces();
+    unsigned int GetTurn();
+    void Reset();
 };
 
 #endif // BACKGROUND_GRID_OBJ_H

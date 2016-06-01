@@ -38,7 +38,7 @@ _pieces = 0;
 _pileTop = 23;
 _image =(Image*) ResourceManager::Instance()->GetResource("grid.png");
 _position = Vector2(0,Screen::GetHeight ())+ Vector2( Screen::GetWidth() / 2 - _image->GetWidth() / 2, 3*31 );
-
+_pieceTurn = 1000;
 }
 
 BackgroundGrid::~BackgroundGrid(){
@@ -234,4 +234,24 @@ return _clearedLines;
 
 unsigned int BackgroundGrid::GetPieces(){
 return _pieces;
+}
+
+unsigned int BackgroundGrid::GetTurn(){
+return _pieceTurn;
+}
+
+void BackgroundGrid::Reset(){
+
+for( int i = 0; i < 23; i ++ )
+{
+    //c++11 assign
+    _grid[i] = {9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9};
+}
+
+_grid[23] = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9};
+
+_clearedLines = 0;
+_pieces = 0;
+_pileTop = 23;
+_pieceTurn = 1000;
 }
