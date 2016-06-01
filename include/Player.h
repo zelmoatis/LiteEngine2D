@@ -9,7 +9,7 @@ class Player: public SceneObject{
     unsigned int _line;
     unsigned int _piece;
     unsigned int _startMS;
-
+    double _dif;
 public:
     Player();
     ~Player();
@@ -22,5 +22,6 @@ public:
     unsigned int GetPiece();
     unsigned int GetLine();
     std::string GetName();
+    void SaveScore();
 };
 #endif // PLAYER_H
