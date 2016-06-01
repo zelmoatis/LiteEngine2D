@@ -23,7 +23,7 @@ if( _buttons.size() == 0 )
 }
 else
 {
-    button->SetPosition( _buttons[_buttons.size() - 1] -> GetPosition() + Vector2( 0, -( int )( _buttons[_buttons.size() - 1] -> GetHeight() ) ) );
+    button->SetPosition( _buttons[_buttons.size() - 1] -> GetPosition() + Vector2( 0, -( int )( _buttons[_buttons.size() - 1] -> GetHeight() + 3 ) ) );
 }
 _buttons.push_back(button);
 }
@@ -59,5 +59,5 @@ for (auto it : _buttons) {
     if( it->Activated() )
         return it->GetName();
     }
-return "none";
+return "0";
 }

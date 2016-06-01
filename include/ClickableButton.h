@@ -11,10 +11,12 @@ private:
     std::string _name;
     Vector2 _position;
     Image * _image;
+    Image * _hoverOn;
+    Image * _hoverOff;
     bool _activated;
 public:
     ClickableButton();
-    ClickableButton( const std::string& name, Image * image );
+    ClickableButton( const std::string& name, Image * off, Image* on );
     ~ClickableButton();
     virtual void Draw();
     virtual void Update();
