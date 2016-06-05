@@ -8,6 +8,7 @@ class TwinsPiece: public RotatableTetromino{
 public:
     TwinsPiece();
     ~TwinsPiece();
+    static Tetromino* Create(){ return new TwinsPiece; }
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
     virtual unsigned int GetNumber();

@@ -1,6 +1,5 @@
 #include "Tetromino.h"
 #include "GameTime.h"
-
 #define INIT_POS_H 4
 #define INIT_POS_V 0
 

@@ -8,6 +8,7 @@ class RArrowPiece: public RotatableTetromino{
 public:
     RArrowPiece();
     ~RArrowPiece();
+    static Tetromino* Create(){ return new RArrowPiece; }
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
     virtual unsigned int GetNumber();

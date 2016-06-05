@@ -24,6 +24,7 @@ _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2(_hPos *
 
 
 _rotation = 0;
+
 }
 
 LArrowPiece::~LArrowPiece(){

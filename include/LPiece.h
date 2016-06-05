@@ -8,6 +8,7 @@ class LPiece: public RotatableTetromino{
 public:
     LPiece();
     ~LPiece();
+    static Tetromino* Create(){ return new LPiece; }
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
     virtual unsigned int GetNumber();

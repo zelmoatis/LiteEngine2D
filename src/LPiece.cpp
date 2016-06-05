@@ -23,10 +23,11 @@ _shape[2] = { 5, 5, 0 };
 _position = Vector2(BackgroundGrid::Instance()->GetPosition()) + Vector2(_hPos * 31, -(int)(_vPos * 31));
 
 _rotation = 0;
+
+
 }
 
 LPiece::~LPiece(){
-
 }
 
 unsigned int LPiece::GetHeight(){

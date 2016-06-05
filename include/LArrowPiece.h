@@ -8,6 +8,7 @@ class LArrowPiece: public RotatableTetromino{
 public:
     LArrowPiece();
     ~LArrowPiece();
+    static Tetromino* Create(){ return new LArrowPiece; }
     virtual unsigned int GetHeight();
     virtual unsigned int GetWidth();
     virtual unsigned int GetNumber();
