@@ -552,7 +552,7 @@
 1463613983 c:\users\catalin\documents\facultate an 1\teme\oop\proiect 3\try2\liteengine2d-master\include\explosionpiece.h
 	"NonRotatableTetronimo.h"
 
-1464425523 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\backgroundgrid.cpp
+1464588825 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\backgroundgrid.cpp
 	"BackgroundGrid.h"
 	"ResourceManager.h"
 	"Screen.h"
@@ -562,7 +562,7 @@
 	<string>
 	<cstdlib>
 
-1464380991 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\backgroundgrid.h
+1464588825 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\backgroundgrid.h
 	"SceneObject.h"
 	"Tetromino.h"
 	<vector>
@@ -921,7 +921,7 @@
 	<string>
 	"Image.h"
 
-1461148648 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\screen.h
+1464655550 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\screen.h
 	<SDL2/SDL.h>
 	<SDL.h>
 	<cstddef>
@@ -952,7 +952,7 @@
 	<SDL.h>
 	<stdint.h>
 
-1464383313 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\explosionpiece.cpp
+1465128441 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\explosionpiece.cpp
 	"ExplosionPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -961,26 +961,29 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1463830696 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\explosionpiece.h
+1465128441 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\explosionpiece.h
 	"NonRotatableTetromino.h"
 
-1461148648 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\game.cpp
+1464736409 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\game.cpp
 	"Game.h"
 	<SDL2/SDL.h>
 	<SDL.h>
 	"GameTime.h"
 	"Input.h"
 	"Screen.h"
+	"PauseMenu.h"
+	"GameOverMenu.h"
 
 1461148648 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\game.h
 	"Scene.h"
 
-1464380715 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\scene.h
+1465122606 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\scene.h
 	<vector>
 	"SceneObject.h"
 	"Tetromino.h"
+	"Player.h"
 
-1461148648 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\gameengine.cpp
+1464655425 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\gameengine.cpp
 	"GameEngine.h"
 	<SDL2/SDL.h>
 	<SDL.h>
@@ -1056,11 +1059,24 @@
 	"Image.h"
 	"Vector2.h"
 
-1464427094 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\scene.cpp
+1465153191 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\scene.cpp
 	"Scene.h"
 	"BackgroundGrid.h"
 	"PieceGenerator.h"
-	<time.h>
+	"Tetromino.h"
+	"ExplosionPiece.h"
+	"WormPiece.h"
+	"JPiece.h"
+	"TwinsPiece.h"
+	"RArrowPiece.h"
+	"LArrowPiece.h"
+	"LPiece.h"
+	"PieceGenerator.h"
+	"Input.h"
+	"GameTime.h"
+	"PauseMenu.h"
+	"GameOverMenu.h"
+	"UpcomingList.h"
 
 1461148648 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\sceneobject.cpp
 	"SceneObject.h"
@@ -1095,7 +1111,7 @@
 1461148648 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\window.cpp
 	"Window.h"
 
-1464378244 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\wormpiece.cpp
+1465122352 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\wormpiece.cpp
 	"WormPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -1104,7 +1120,7 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1463844199 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\wormpiece.h
+1465120985 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\wormpiece.h
 	"RotatableTetromino.h"
 
 1463404718 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\basicsquare.cpp
@@ -1123,70 +1139,68 @@
 	"Vector2.h"
 	<vector>
 
-1463837936 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\tetromino.h
+1465122515 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\tetromino.h
 	"SceneObject.h"
 	<vector>
 
-1463830696 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\nonrotatabletetromino.h
+1464452610 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\nonrotatabletetromino.h
 	"Tetromino.h"
 	"Image.h"
 	"Vector2.h"
 
-1463840106 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\rotatabletetromino.h
+1464452610 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\rotatabletetromino.h
 	"Tetromino.h"
 	"Image.h"
 	"Vector2.h"
 
-1464380991 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\nonrotatabletetromino.cpp
+1464651796 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\nonrotatabletetromino.cpp
 	"NonRotatableTetromino.h"
 	"BackgroundGrid.h"
 	"Screen.h"
 	"Input.h"
 	"GameTime.h"
 	"Vector2.h"
+	"ResourceManager.h"
 	<cstdlib>
 	<iostream>
 
-1464380991 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\rotatabletetromino.cpp
+1464651796 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\rotatabletetromino.cpp
 	"RotatableTetromino.h"
 	"BackgroundGrid.h"
 	"Screen.h"
 	"Input.h"
 	"GameTime.h"
 	"Vector2.h"
+	"ResourceManager.h"
 	<cstdlib>
 	<iostream>
 
-1463839500 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\tetromino.cpp
+1465121701 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\tetromino.cpp
 	"Tetromino.h"
+	"GameTime.h"
 
-1464427066 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\piecegenerator.cpp
+1465152876 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\piecegenerator.cpp
 	"PieceGenerator.h"
 	<time.h>
 	<cstdio>
 	"Tetromino.h"
-	"ExplosionPiece.h"
-	"WormPiece.h"
-	"JPiece.h"
-	"TwinsPiece.h"
-	"RArrowPiece.h"
-	"LArrowPiece.h"
 	"BackgroundGrid.h"
 	"ResourceManager.h"
 	"Screen.h"
 	"Node.h"
 
-1464383467 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\piecegenerator.h
+1465150194 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\piecegenerator.h
 	"SceneObject.h"
 	"Tetromino.h"
 	"Vector2.h"
 	"Node.h"
+	<map>
 
 1464165025 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\node.h
 
 1464165025 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\node.cpp
 
-1464424236 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\jpiece.cpp
+1465122468 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\jpiece.cpp
 	"JPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -1195,7 +1209,7 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1464168772 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\jpiece.h
+1465120985 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\jpiece.h
 	"RotatableTetromino.h"
 
 1464417147 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\resourcemanager.cpp
@@ -1204,12 +1218,12 @@
 	"Image.h"
 	<iostream>
 
-1464378447 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\resourcemanager.h
+1464587647 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\resourcemanager.h
 	"Object.h"
 	<map>
 	<string>
 
-1464424510 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\twinspiece.cpp
+1465122389 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\twinspiece.cpp
 	"TwinsPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -1218,10 +1232,10 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1464424443 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\twinspiece.h
+1465120985 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\twinspiece.h
 	"RotatableTetromino.h"
 
-1464426140 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\rarrowpiece.cpp
+1465122468 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\rarrowpiece.cpp
 	"RArrowPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -1230,10 +1244,10 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1464425886 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\rarrowpiece.h
+1465120985 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\rarrowpiece.h
 	"RotatableTetromino.h"
 
-1464426767 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\larrowpiece.cpp
+1465122468 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\larrowpiece.cpp
 	"LArrowPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -1242,10 +1256,10 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1464426692 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\larrowpiece.h
+1465120985 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\larrowpiece.h
 	"RotatableTetromino.h"
 
-1464427369 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\lpiece.cpp
+1465122311 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\lpiece.cpp
 	"LPiece.h"
 	"ResourceManager.h"
 	"BackgroundGrid.h"
@@ -1254,6 +1268,90 @@
 	"GameTime.h"
 	"Vector2.h"
 
-1464427372 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\lpiece.h
+1465120880 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\lpiece.h
 	"RotatableTetromino.h"
+
+1464731872 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\layoutmanager.cpp
+	"LayoutManager.h"
+	"ResourceManager.h"
+	"Vector2.h"
+	"Screen.h"
+
+1464650180 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\layoutmanager.h
+	"Vector2.h"
+	<vector>
+	"ClickableButton.h"
+
+1464732771 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\clickablebutton.cpp
+	"ClickableButton.h"
+	"Screen.h"
+	"Input.h"
+
+1464731430 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\clickablebutton.h
+	"SceneObject.h"
+	"Vector2.h"
+	"Image.h"
+	<string>
+
+1464731430 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\pausemenu.cpp
+	"PauseMenu.h"
+	"ResourceManager.h"
+	"ClickableButton.h"
+	"Screen.h"
+
+1464650900 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\pausemenu.h
+	"LayoutManager.h"
+	"SceneObject.h"
+	<vector>
+	<map>
+	<string>
+
+1464736540 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\player.cpp
+	"Player.h"
+	"GameTime.h"
+	"BackgroundGrid.h"
+	<cmath>
+	<cstdio>
+	<string>
+	<fstream>
+
+1464735346 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\player.h
+	"SceneObject.h"
+	<string>
+
+1464731344 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\gameovermenu.cpp
+	"GameOverMenu.h"
+	"ResourceManager.h"
+	"ClickableButton.h"
+	"Screen.h"
+
+1464651036 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\gameovermenu.h
+	"LayoutManager.h"
+	"SceneObject.h"
+	<vector>
+	<map>
+	<string>
+
+1454366533 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\proj\codeblocks\lib\sdl2-2.0.4\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1465152960 source:c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\src\upcominglist.cpp
+	"UpcomingList.h"
+	<time.h>
+	<cstdio>
+	"Tetromino.h"
+	"PieceGenerator.h"
+	"BackgroundGrid.h"
+	"ResourceManager.h"
+	"Screen.h"
+	"Node.h"
+
+1465150802 c:\users\catalin\documents\facultate an 1\teme\oop\badris-git\liteengine2d\include\upcominglist.h
+	"SceneObject.h"
+	"Tetromino.h"
+	"Vector2.h"
+	"Node.h"
+	<map>
 
