@@ -6,27 +6,24 @@
 #include "Tetromino.h"
 #include "Vector2.h"
 #include "Node.h"
+#include <map>
 
 
 class PieceGenerator: public SceneObject{
 
-    Node *_front;
-    Node *_end;
-    Vector2 _position;
-    unsigned int _max;
     static PieceGenerator* _PGEN_instance;
     PieceGenerator();
     PieceGenerator& operator=(const PieceGenerator&);
     PieceGenerator(const PieceGenerator&);
     ~PieceGenerator();
-    void Clear();
+    std::map<std::string, Tetromino*(*)()> _pieceMap;
+    std::vector<std::string> _pieceNames;
+    Tetromino* PieceCreator(const std::string& pieceName);
 public:
     static PieceGenerator * Instance();
-    Tetromino* PopPiece();
-    void Draw();
-    void Update();
-    void show_list();
-    void Reset();
+    Tetromino* NumberGetPiece(int nr);
+    unsigned int PieceTypes();
+    void Register( const std::string& pieceName, Tetromino* (*Create)(void) );
 
 };
 
