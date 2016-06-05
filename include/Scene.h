@@ -14,7 +14,7 @@ private:
     unsigned int _pauseTimeMS;
     bool _running;
     bool _paused;
-
+    void InitializePieces();
 public:
 	Scene ();
 	~Scene ();

@@ -1,17 +1,43 @@
 #include "Scene.h"
 #include "BackgroundGrid.h"
+
+#include "PieceGenerator.h"
+#include "Tetromino.h"
+#include "ExplosionPiece.h"
+#include "WormPiece.h"
+#include "JPiece.h"
+#include "TwinsPiece.h"
+#include "RArrowPiece.h"
+#include "LArrowPiece.h"
+#include "LPiece.h"
+
 #include "PieceGenerator.h"
 #include "Input.h"
 #include "GameTime.h"
 #include "PauseMenu.h"
 #include "GameOverMenu.h"
+#include "UpcomingList.h"
 
+void Scene::InitializePieces(){
+
+PieceGenerator::Instance()->Register("ExplosionPiece",&ExplosionPiece::Create);
+PieceGenerator::Instance()->Register("WormPiece",&WormPiece::Create);
+PieceGenerator::Instance()->Register("RArrowPiece",&RArrowPiece::Create);
+PieceGenerator::Instance()->Register("LArrowPiece",&LArrowPiece::Create);
+PieceGenerator::Instance()->Register("LPiece",&LPiece::Create);
+PieceGenerator::Instance()->Register("TwinsPiece",&TwinsPiece::Create);
+PieceGenerator::Instance()->Register("JPiece",&JPiece::Create);
+
+}
 Scene::Scene ()
 {
+    InitializePieces();
     _running = true;
     _paused = false;
-	_currentPiece = PieceGenerator::Instance()->PopPiece();
+	_currentPiece = UpcomingList::Instance()->PopPiece();
 	_player = new Player;
+
+
 }
 
 Scene::~Scene ()
@@ -52,7 +78,7 @@ void Scene::Update ()
         if( _currentPiece->Sits() )
         {
             delete _currentPiece;
-            _currentPiece = PieceGenerator::Instance()->PopPiece();
+            _currentPiece = UpcomingList::Instance()->PopPiece();
         }
         if( BackgroundGrid::Instance()->ReachedTop() )
         {
@@ -77,7 +103,7 @@ void Scene::Display ()
 	BackgroundGrid::Instance()->Draw();
 
 	_currentPiece->Draw();
-	PieceGenerator::Instance()->Draw();
+	UpcomingList::Instance()->Draw();
     }
 	if( !_running )
     {
@@ -91,9 +117,9 @@ void Scene::Reset ()
     _running = true;
     _paused = false;
     _player = new Player;
-    PieceGenerator::Instance()->Reset();
+    UpcomingList::Instance()->Reset();
     BackgroundGrid::Instance()->Reset();
-    _currentPiece = PieceGenerator::Instance()->PopPiece();
+    _currentPiece = UpcomingList::Instance()->PopPiece();
 }
 
 void Scene::Clear ()
